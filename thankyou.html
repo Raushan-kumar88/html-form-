@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Html form</title>
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"> -->
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        .container{
+            border: 1px solid black; width: 35%; height: 720px; margin-left: 30%;
+            border-top: 5px solid blue;
+            margin-top: 30px;
+            height: inherit;
+            background: white;
+            box-shadow: 2px 2px 5px 4px rgb(26, 23, 23);
+            font-size: 17px;
+        }
+        .title{
+            text-align: center;
+            text-shadow: 2px 2px 2px rgb(12, 240, 221);
+        }
+        .same{
+            width: 60%;
+            height: 30px;
+            outline-offset: 2px;
+            outline: none;
+            border: 5px solid inset rgb(152, 152, 155);
+            transition: all 0.6s ease;
+        }
+        .same:hover{
+            background: skyblue;
+            /* border: 1px solid blue; */
+            
+        }
+        .but{
+            width: 80px;
+            padding: 5px;
+            margin: 10px;
+            font-size: 20px;
+            font-weight: 500;
+            border-radius: 30px;
+            outline: none;
+            cursor: pointer;
+            box-shadow: 2px 2px 5px black;
+            color: blue;
+            transition: all 0.6s ease;
+        }
+        .but:hover{
+            background:   #00ffcc;
+            color: black;
+            
+        }
+    </style>
+
+</head>
+
+<body style="background:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url('https://i.pinimg.com/originals/1c/05/7d/1c057d436c88c28d7e8ddab7409a897c.jpg'); background-size: cover;"> 
+     <div class="container">
+        <h2 class="title">Html Registration Form</h2>
+        <hr>
+        <div style=" margin:0px 20px 20px 0px">
+    <figure >
+    
+    <form action="" >
+        Name: <input type="text" placeholder="Enter your name" class="same" autofocus="" autocapitalize="none" autocomplete="username" required="" id="id_username"><br> <br>
+        Email : <input type="email" placeholder="enter your email" class="same" autofocus="" autocapitalize="none" autocomplete="username" required="" id="id_username"> <br><br>
+        Passward: <input type="password" placeholder="Passward" class="same" autofocus="" autocapitalize="none" autocomplete="current-password" required="" id="id_password">
+        <i class="far fa-eye" id="togglePassword" style="margin-left: -30px; cursor: pointer;"></i><br><br>
+        Confirm-Passward: <input type="password" placeholder="Confirm-Passward" autofocus="" autocapitalize="none" autocomplete="current-password" required="" id="id_password" class="same">
+        <i class="far fa-eye" id="togglePassword" style="margin-left: -30px; cursor: pointer;"></i><br><br>
+        Phone: <input type="phone" placeholder="7487....." class="same"><br><br>
+        D.O.B: <input type="date" class="same"><br><br>
+        Gender: <input type="radio" name="Ra"> Male <label for=""><input type="radio" name="Ra">
+            Female</label><br><br>
+        Hobbies <br>
+        <input type="checkbox"> Cricket <label><input type="checkbox">Hockey</label><label><input
+                type="checkbox"></label>Bedminton <br><br>
+        Upload Photo: <input type="file" name="fileupload" accept="image/*" > <br><br>
+        Country: <select name="" id="" style="margin-left: 20px;" class="same">
+            <option value="">Select country name</option>
+            <option value="">India</option>
+            <option value="">Pakistan</option>
+            <option value="">Austilia</option>
+        </select><br><br>
+        <input class="but" type="submit" name="submit" value="Submit"> <label for=""><input class="but" type="reset" name="reset"
+                value="Reset"></label>
+        <input class="but" type="button" name="Ok" value="ok"> <br><br>
+        
+               <a target="_blank" title="Facebook" href="https://www.facebook.com/raushan.gupta.75248795"> 
+                   <i class="fa-brands fa-facebook" style=" font-size: 40px;" ></i></a>
+                   <a target="_blank" title="Github" href="https://github.com/Raushan-kumar88" style="float: right;"> <i class="fa-brands fa-github-square" style=" font-size: 40px;"  ></i></a>
+
+    </form>
+</figure>
+</div>
+</div>
+<script>
+     const togglePassword = document.querySelector('#togglePassword');
+   const password = document.querySelector('#id_password');
+ 
+
+  togglePassword.addEventListener('click', function (e) {
+    // toggle the type attribute
+    const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+    password.setAttribute('type', type);
+    // toggle the eye slash icon
+    this.classList.toggle('fa-eye-slash');
+});
+</script>
+</body>
+</html>
