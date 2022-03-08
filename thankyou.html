@@ -34,6 +34,8 @@
         .same:hover{
             background: skyblue;
             /* border: 1px solid blue; */
+            outline: none;
+            /* border: none; */
             
         }
         .but{
@@ -52,6 +54,8 @@
         .but:hover{
             background:   #00ffcc;
             color: black;
+            outline: none;
+            border: none;
             
         }
     </style>
@@ -62,7 +66,7 @@
      <div class="container">
         <h2 class="title">Html Registration Form</h2>
         <hr>
-        <div style=" margin:0px 20px 20px 0px">
+        <!-- <div style=" margin:0px 20px 20px 0px"> -->
     <figure >
     
     <form action="" >
@@ -70,9 +74,9 @@
         Email : <input type="email" placeholder="enter your email" class="same" autofocus="" autocapitalize="none" autocomplete="username" required="" id="id_username"> <br><br>
         Passward: <input type="password" placeholder="Passward" class="same" autofocus="" autocapitalize="none" autocomplete="current-password" required="" id="id_password">
         <i class="far fa-eye" id="togglePassword" style="margin-left: -30px; cursor: pointer;"></i><br><br>
-        Confirm-Passward: <input type="password" placeholder="Confirm-Passward" autofocus="" autocapitalize="none" autocomplete="current-password" required="" id="id_password" class="same">
-        <i class="far fa-eye" id="togglePassword" style="margin-left: -30px; cursor: pointer;"></i><br><br>
-        Phone: <input type="phone" placeholder="7487....." class="same"><br><br>
+        Confirm-Passward: <input type="password" placeholder="Confirm-Passward" autofocus="" autocapitalize="none" autocomplete="current-password" required="" id="id_password1" class="same">
+        <i class="far fa-eye" id="togglePassword1" style="margin-left: -30px; cursor: pointer;"></i><br><br>
+        Phone: <input type="phone" placeholder="7487....." class="same" required=""><br><br>
         D.O.B: <input type="date" class="same"><br><br>
         Gender: <input type="radio" name="Ra"> Male <label for=""><input type="radio" name="Ra">
             Female</label><br><br>
@@ -86,7 +90,8 @@
             <option value="">Pakistan</option>
             <option value="">Austilia</option>
         </select><br><br>
-        <input class="but" type="submit" name="submit" value="Submit"> <label for=""><input class="but" type="reset" name="reset"
+        <input class="but" type="submit" name="submit" value="Submit" onclick="demo()"> <label for="">
+        <input class="but" type="reset" name="reset"
                 value="Reset"></label>
         <input class="but" type="button" name="Ok" value="ok"> <br><br>
         
@@ -99,10 +104,12 @@
 </div>
 </div>
 <script>
+    function demo()
+    {
+        alert("This page is not work try next time...");
+    }
      const togglePassword = document.querySelector('#togglePassword');
    const password = document.querySelector('#id_password');
- 
-
   togglePassword.addEventListener('click', function (e) {
     // toggle the type attribute
     const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
@@ -110,6 +117,16 @@
     // toggle the eye slash icon
     this.classList.toggle('fa-eye-slash');
 });
+const togglePassword1 = document.querySelector('#togglePassword1');
+   const password1 = document.querySelector('#id_password1');
+  togglePassword1.addEventListener('click', function (e) {
+    // toggle the type attribute
+    const type = password1.getAttribute('type') === 'password' ? 'text' : 'password';
+    password1.setAttribute('type', type);
+    // toggle the eye slash icon
+    this.classList.toggle('fa-eye-slash');
+});
 </script>
+
 </body>
 </html>
